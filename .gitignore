@@ -128,3 +128,7 @@ dmypy.json
 data-test/
 
 data/
+
+backtest_trades.csv
+
+backtest_results.png
