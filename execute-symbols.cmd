@@ -1,0 +1,1 @@
+python3.12 download_forex_pairs.py EURJPY EURNZD GBPJPY NZDCHF NZDUSD USDCAD USDCHF XAUUSD --timeframe 30 --count 99999 --output-dir ./data-test
