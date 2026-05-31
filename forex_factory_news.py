@@ -29,7 +29,7 @@ MAX_RISK_DOLLARS = 800.0      # Risque max atteint quand RR = MIN_RR (0.2)
 RISK_STRATEGY    = 'sqrt'     # 'linear' | 'exponential' | 'sqrt'
 
 # ── Zone RR pénalisée ──────────────────────────────────────────
-PENALIZED_RR_ZONE     = (1.0, 3.0)  # (borne_basse, borne_haute)
+PENALIZED_RR_ZONE     = (1.5, 5.0)  # (borne_basse, borne_haute)
 PENALIZED_RISK_FACTOR = 0.0          # 0.0 = skip | 0.5 = demi-risque | 1.0 = désactivé
 
 # ── Trades simultanés cross-paires ─────────────────────────────
@@ -448,30 +448,8 @@ def run_all_symbols():
 # Scheduler
 # =========================
 if __name__ == '__main__':
-    log.info("=" * 60)
-    log.info("BOT DEMARRE")
-    log.info("=" * 60)
-    log.info(f"Device             : {DEVICE}")
-    log.info(f"Model              : {MODEL_PATH}")
-    log.info(f"Paires             : {SYMBOLS}")
-    log.info(f"Timeframe          : {TIMEFRAME} min")
-    log.info(f"N candles          : {N_CANDLES}")
-    log.info("--- Seuils de signal ---")
-    log.info(f"Confidence         : >= {CONFIDENCE_THRESHOLD}")
-    log.info(f"MIN_RR             : {MIN_RR}")
-    log.info("--- Gestion du risque ---")
-    log.info(f"Strategie risque   : {RISK_STRATEGY}")
-    log.info(f"Risque max         : {MAX_RISK_DOLLARS}$ @ RR={MIN_RR}")
-    log.info(f"Zone penalisee     : RR [{PENALIZED_RR_ZONE[0]} - {PENALIZED_RR_ZONE[1]}] "
-             f"x{PENALIZED_RISK_FACTOR} "
-             f"({'skip' if PENALIZED_RISK_FACTOR == 0.0 else f'risque x{PENALIZED_RISK_FACTOR}'})")
-    log.info(f"MAX_OPEN_TRADES    : {MAX_OPEN_TRADES} (cross-paires)")
-    log.info("--- Auto-close ---")
-    log.info(f"Auto-close actif   : {ENABLE_AUTO_CLOSE_PROFIT_AGED}")
-    log.info(f"Age max            : {POSITION_MAX_AGE_MINUTES} min "
-             f"({POSITION_MAX_AGE_MINUTES / 60:.0f}h)")
-    log.info(f"Profit min close   : {MIN_PROFIT_TO_CLOSE}$")
-    log.info("=" * 60)
+    log.info(f"Bot demarre | Paires: {SYMBOLS}")
+    log.info(f"Device: {DEVICE}")
 
     run_all_symbols()
 
