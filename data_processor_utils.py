@@ -20,6 +20,8 @@ MIN_RR = 0.55
 MIN_N_ATR_SL = 1.5
 MAX_N_ATR_SL = 5.5
 
+n_features = 18
+
 print(f"MIN_RR={MIN_RR} | SL [{MIN_N_ATR_SL}–{MAX_N_ATR_SL}] ATR | HORIZON={HORIZON}\n")
 
 
